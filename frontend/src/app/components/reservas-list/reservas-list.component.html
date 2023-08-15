@@ -1,0 +1,18 @@
+<div class="col-md-2" *ngFor="let reserva of reservas">
+    <!--col-md-2 -> crea 2 columnas, ngFor -> para recorrer todas las reservas-->
+    <div class="card-text-center">
+        <div class="card-header bg-dark text-white d-flex justify-content-between align-items-center">
+            <!--bg-dark: de color oscuro, text-white: para hacer el texto de color blanco-->
+            {{reserva.fecha}}
+            <button class=" btn-danger" (click)="deleteReserva(reserva.fecha)">
+                <i class="far fa-trash-alt"></i>
+            </button>
+        </div>
+        <div class="card-body">
+           <p>{{reserva.hora}}</p> 
+           <a [routerLink]="['/reservas/editar', reserva.fecha]" class="btn btn-info btn-block">
+                EDITAR
+           </a>
+        </div>
+    </div>
+</div>

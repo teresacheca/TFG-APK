@@ -1,0 +1,58 @@
+
+/*Le damos formato a la "tarjeta"*/
+.card {
+  background-color: white; /*Color de fondo*/
+  border-radius: 10px; /*Creamos un racio en los border para crear esquinas redondeadas*/
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /*Ponemos una sombra alrededor de l "tarjeta"*/
+  width: 300px;
+  padding: 20px;
+  text-align: center;
+
+  /*para posicionarlo en el centro de la pantalla aunque se cambie esta de tamaño*/
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/*Le damos formato a la foto de perfil*/
+.card-img-top {
+  display: block;
+  margin: 0 auto;
+  width: 120px; /* Ancho de la foto */
+  height: 120px; /* Largo de la foto */
+  border-radius: 50%; /* Para que se vea dentro de un círculo*/
+  object-fit: cover; /* Para que la foto de perfil se recorte con el borde circular */
+}
+
+/*Le damos formato a los elementos que se encuentran dentro de la "tarjeta"*/
+.card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/*Le damos formato a las letras que muestran el nombre del usuario*/
+.form-group p {
+  font-size: 18px;
+  margin: 0;
+  color: #333;
+}
+
+/*Le damos formato a todos los botones*/
+button {
+  background-color: #ccc; 
+  color: black; /*Color del texto del botón*/
+  border: none; /*Eliminamos el borde del botón*/
+  padding: 10px; /*Agregamos espacio arededor del contenido del botón para que se vea mejor*/
+  cursor: pointer; /*Cambiamos el ratón a puntero cuando este pasa por encima*/
+  font-weight: normal; /*Establecemos el grosor de las letras del texto*/
+  border-radius: 4px; 
+  transition: background-color 0.3s ease; /*Agragamos una transición leve para el cambio del color de fondo*/
+  width: 100%; /*Ancho del botón*/
+}
+
+/*Usamos hover para cambiar el color de los botones cuando el cursor se pone encima de estos*/
+button:hover {
+  background-color: #999;
+}

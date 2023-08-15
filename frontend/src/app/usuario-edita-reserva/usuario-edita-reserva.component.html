@@ -1,0 +1,36 @@
+
+<button class="back-button" (click)="volver()"><i class="fas fa-chevron-circle-left"></i> Volver</button> <!--Le añadimos un icono de flecha al botón "volver"-->
+<h2>Editar reserva</h2>
+<div class="card"> <!--Hacemos que la vista se vea como una "tarjeta"-->
+    <div class="card-body">
+        <form>
+            <!--Mostramos las etiquetas de la información que va en cada hueco y las casillas con los valores actuales que se pueden modificar con la nueva información de la reserva-->
+            <div>
+                Recurso:
+                <input type="text" name="nombre_rs" [(ngModel)]="reserva.nombre_rs">
+            </div>
+            <div>
+                Usuarios: {{reserva.nombre_usuario}}
+            </div>
+            <div>
+                Fecha:
+                <input type="text" name="fecha" [(ngModel)]="fecha">
+            </div>
+            <div>
+                Hora:
+                <input type="text" name="hora" [(ngModel)]="reserva.hora">
+            </div>
+            <!--Le ponemos clases a los botones para poder modificarlos mejor-->
+            <div class="card-buttons">
+                <button class="deleteButton" (click)="eliminaReservaUsu(reserva.id_reserva)">
+                    <i class="fas fa-trash"></i> Eliminar reserva
+                </button>
+                <button class="saveButton" (click)="guardaCambiosReservaUsu(reserva.id_reserva, reserva, fecha)" style="float: right;">
+                    <i class="fas fa-save"></i> Guardar cambios
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+
+

@@ -1,0 +1,73 @@
+<!--Comprobamos si la solicitud está pendiente-->
+<p *ngIf="pendiente then estaPendiente else noPendiente">
+</p>
+<h2>Solicitud</h2>
+<!--Si está pendiente mostraremos los botones para poder aceptarla o rechazarla-->
+<ng-template #estaPendiente>
+        <div class="card"> <!--Hacemos que la vista se vea como una "tarjeta"-->
+            <div class="card-body">
+                <form>
+                    <!--Mostramos el logo de la empresa que ha hecho la solicitud-->
+                    <img [src]="solicitud.logo === '' ? '/assets/img/upload.png' : solicitud.logo" class="card-img-top">
+                    <!--Mostramos los datos de la solicitud que queremos mostrar-->
+                    <div>
+                        Nombre empresa: {{solicitud.nombre_empresa}}
+                    </div>
+                    <div>
+                        Datos de contacot: {{solicitud.datos_de_contacto}}
+                    </div>
+                    <div>
+                        Descripcion: {{solicitud.descripcion}}
+                    </div>
+                    <div>
+                        Direccion: {{solicitud.direccion}}
+                    </div>
+                    <div>
+                        Estado: {{solicitud.estado}}
+                    </div>
+                    <div>
+                        Identificador: {{solicitud.id_solicitud}}
+                    </div>
+                </form>
+                <!--Creamos los botones y los metemos en una clase para poder modificarlos fácilmente-->
+                <div class="card-buttons">
+                    <button class="rejectButton" (click)="rechazarSolicitud()">Rechazar</button>
+                    <button class="acceptButton" (click)="aceptarSolicitud()">Aceptar</button>
+                  </div>
+            </div>
+        </div>
+    <button class="back-button" (click)="volver()"><i class="fas fa-chevron-circle-left"></i> Volver</button> <!--Le añadimos un icono de flecha al botón "volver"-->
+</ng-template>
+
+<!--Si no está pendiente sólo mostraremos los datos de la solicitud-->
+<ng-template #noPendiente>
+        <div class="card">
+            <div class="card-body">
+                <form>
+                    <!--Mostramos el logo de la empresa que ha hecho la solicitud-->
+                    <img [src]="solicitud.logo === '' ? '/assets/img/upload.png' : solicitud.logo" class="card-img-top">
+                    <!--Mostramos los datos de la solicitud que queremos mostrar-->
+                    <div>
+                        Nombre empresa: {{solicitud.nombre_empresa}}
+                    </div>
+                    <div>
+                        Datos de contacot: {{solicitud.datos_de_contacto}}
+                    </div>
+                    <div>
+                        Descripcion: {{solicitud.descripcion}}
+                    </div>
+                    <div>
+                        Direccion: {{solicitud.direccion}}
+                    </div>
+                    <div>
+                        Estado: {{solicitud.estado}}
+                    </div>
+                    <div>
+                        Identificador: {{solicitud.id_solicitud}}
+                    </div>
+                </form>
+            </div>
+        </div>
+    <button class="back-button" (click)="volver()"><i class="fas fa-chevron-circle-left"></i> Volver</button> <!--Le añadimos un icono de flecha al botón "volver"-->
+    
+</ng-template>

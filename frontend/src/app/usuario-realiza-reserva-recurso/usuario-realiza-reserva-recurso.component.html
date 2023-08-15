@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+
+<body>
+  <button class="back-button" (click)="volver()"><i class="fas fa-chevron-circle-left"></i> Volver</button>
+  <div>
+    <h2>Horas reservadas</h2>
+  </div>
+
+  <div class="calendar-container">
+    <div class="calendar">
+      <div class="calendar-header">
+        <button (click)="goToPreviousMonth()">&lt;</button>
+        <h1>{{ currentMonth.format('MMMM YYYY') }}</h1>
+        <button (click)="goToNextMonth()">&gt;</button>
+      </div>
+      <div class="calendar-grid">
+        <div class="calendar-day" *ngFor="let dayOfWeek of daysOfWeek">{{ dayOfWeek }}</div>
+        <ng-container *ngFor="let week of weeks">
+          <div class="calendar-date" *ngFor="let date of week">
+            <span *ngIf="date !== 0">
+              <mat-expansion-panel hideToggle>
+                <mat-expansion-panel-header>
+                  <mat-panel-title>
+                    {{ date }}
+                  </mat-panel-title>
+                </mat-expansion-panel-header>
+                <div class="smaller-font">
+                  Horas libres:
+                  <div *ngFor="let hora of seleccionDia(date)">
+                    <button (click)="hacerReserva(hora, date, currentMonth.format('YYYY-MM'))">{{ hora }}</button>
+                  </div>
+                </div>
+              </mat-expansion-panel>
+            </span>
+            <div *ngIf="date !== 0 && tieneReserva(date)">
+              <div class="smaller-font">
+                Reservado:
+                <div *ngFor="let hora of getHoras(date, currentMonth.format('YYYY-MM'))">{{ hora }}</div>
+              </div>
+            </div>
+          </div>
+        </ng-container>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

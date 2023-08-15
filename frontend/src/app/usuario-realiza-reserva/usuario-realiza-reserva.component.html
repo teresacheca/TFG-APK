@@ -1,0 +1,22 @@
+<button class="back-button" (click)="volver()"><i class="fas fa-chevron-circle-left"></i> Volver</button> <!--Le añadimos un icono de flecha al botón "volver"-->
+<h2>Selecciona un recurso o servicio</h2>
+<div *ngFor="let recurso of recursos"><!--Recorremos todos los recursos uno por uno-->
+    <div class="card-text-center">
+        <!--Mostramos la imagen del recurso-->
+        <img [src]="recurso.foto == '' ? '/assets/img/camara.png' : recurso.foto" class="card-img-top">
+        <div class="card-body">
+             <!--Mostramos la información del recurso-->
+            <p>{{recurso.nombre_rs}}</p> 
+           <p>{{recurso.descripcion}}</p> 
+           <p>{{recurso.datos}}</p> 
+           <p>{{recurso.aforo}}</p> 
+        </div>
+        <!--Creamos el botón que nos llevará a la página que nos permite hacer las reservas del recurso-->
+        <button (click)="reservarRecurso(recurso.id_recursoservicio)">
+            Reservar
+        </button>
+        
+    </div>
+    
+</div>
+

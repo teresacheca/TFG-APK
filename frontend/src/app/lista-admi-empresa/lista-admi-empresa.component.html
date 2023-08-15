@@ -1,0 +1,29 @@
+<p *ngIf="vacio else lista">
+    <!--Si no hay administradores, mostraremos un mesaje indicándolo-->
+    No hay administradores en esta empresa
+    <button class="back-button" (click)="volver()"><i class="fas fa-chevron-circle-left"></i> Volver</button> <!--Le añadimos un icono de flecha al botón "volver"-->
+</p>
+
+<!--En cambio, si hay administradores, los mostramos-->
+<ng-template #lista>
+    <div class="centered-container">
+        <button class="back-button" (click)="volver()"><i class="fas fa-chevron-circle-left"></i> Volver</button> <!--Le añadimos un icono de flecha al botón "volver"-->
+        <h2>Administradores</h2>
+        <div class="col-md-2" *ngFor="let admi of administradores"><!--Recorremos el vector de administradores y mostramos uno por uno-->
+            <!--Mostramos la imagen de perfil de todos los administradores-->
+            <img [src]="admi.foto == '' ? '/assets/img/camara.png' : admi.foto" class="card-img-top">
+            <div>
+                <!--Mostramos el nombre de cada administrador-->
+                {{admi.nombre_usuario}}
+            </div>
+            <!--Añadimos un botón que nos permitirá movernos a una página donde podremos editar la información del administrador-->
+            <button (click)="editarAdministradorEmpresa(admi)">
+                <i class="fas fa-pencil-alt"></i> Editar
+            </button>
+        </div>        
+        <!--Añadimos un botón que nos permitirá movernos a una página donde podremos añadir un nuevo administrador-->
+        <button class="add-button" (click)="aniadir()"><i class="fas fa-plus"></i>Añadir</button>
+    </div>
+    
+    
+</ng-template> 

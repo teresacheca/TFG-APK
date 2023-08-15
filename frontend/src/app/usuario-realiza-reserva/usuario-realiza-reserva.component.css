@@ -1,0 +1,84 @@
+
+  
+/*Le damos formato al título*/
+h2 {
+  text-align: center;
+}
+
+/*Le damos formato a todo el conjunto*/
+.card-text-center {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  padding: 20px;
+  width: 300px;
+  transition: transform 0.2s ease-in-out;
+
+  position: relative;
+  /*Para que esté en el centro de la pantalla*/
+  top: 50%;
+  left: 35%;
+  margin:10px
+}
+
+/*Le damos formato a los elementos que se encuentran dentro de la "tarjeta"*/
+.card-body {
+  margin-top: 10px;
+  text-align: left;
+}
+
+/*Le damos formato a la imagen del recurso*/
+.card-img-top {
+  display: block;
+  margin: 0 auto;
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+  margin-bottom: 10px;
+}
+  
+
+/*le damos formato al botón "volver"*/
+.back-button {
+  background-color: #ccc; /*Color de fondo*/
+  color: black; /*Color de las letras*/
+  border: none; /*Eliminamos el borde*/
+  padding: 5px; /*Agregamos espacio arededor del contenido del botón para que se vea mejor*/
+  cursor: pointer; /*Cambiamos el ratón a puntero cuando este pasa por encima*/
+  font-weight: normal; /*Establecemos el grosor de las letras del texto*/
+  font-size: small; /*Establecemos el tamaño de la letra*/
+  border-radius: 4px; 
+  transition: background-color 0.3s ease; /*Agragamos una transición leve para el cambio del color de fondo*/
+  width: 80px;  /*Ancho del botón*/
+
+  /*Movemos su posición para situarlo a la derecha del borde superior de la pantalla*/
+  position: absolute; /* Añade posición absoluta al botón */
+  top: 120px; /* Distancia desde la parte superior */
+  right: 1%; /* Distancia desde la derecha */
+}
+
+/*Usamos hover para cambiar el color de los botones cuando el cursor se pone encima de estos*/
+.back-button:hover {
+  background-color: #999;
+}
+  
+/*Le damos formato al resto de botones*/
+button {
+  background-color: #ccc;
+  color: black;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  font-weight: normal;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+/*Usamos hover para cambiar el color de los botones cuando el cursor se pone encima de estos*/
+button:hover {
+  background-color: #999;
+}
+ 
+
+

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Lista de recursos y servicios</title>
+</head>
+<body>
+    <!--Le añadimos un icono de flecha al botón "volver"-->
+    <button class="back-button" (click)="volver()"><i class="fas fa-chevron-circle-left"></i> Volver</button>
+    <h2>Lista de recursos y servicios</h2>
+    <div *ngFor="let recurso of recursos">
+        
+        <div class="card">
+            <!--Mostramos la imagen del recurso-->
+            <img [src]="recurso.foto == '' ? '/assets/img/camara.png' : recurso.foto" class="card-img-top">
+            <div class="card-body">
+                <!--Mostramos la información del recurso-->
+               <p><strong>Nombre:</strong> {{recurso.nombre_rs}}</p> 
+               <p><strong>Descripción:</strong> {{recurso.descripcion}}</p> 
+               <p><strong>Datos adicionales:</strong> {{recurso.datos}}</p> 
+               <p><strong>Aforo:</strong> {{recurso.aforo}}</p> 
+            </div>
+            <!--Le ponemos iconos a los botones-->
+            <button (click)="AeVeRecurso(recurso.id_recursoservicio)">
+                <i class="fas fa-eye"></i> Ver
+            </button>
+            <button (click)="AeEditaRecurso(recurso.id_recursoservicio)">
+                <i class="fas fa-pencil-alt"></i> Editar
+            </button>
+        </div>
+    </div>
+    <!--Ponemos el botón añadir-->
+    <button class="add-button" (click)="AeAnidadeRecurso()"><i class="fas fa-plus"></i>Añadir</button>
+</body>
+</html>

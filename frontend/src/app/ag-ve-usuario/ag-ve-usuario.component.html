@@ -1,0 +1,31 @@
+
+<button class="back-button" (click)="volver()"><i class="fas fa-chevron-circle-left"></i> Volver</button> <!--Le añadimos un icono de flecha al botón "volver"-->
+<div class="card"> <!--Hacemos que la vista se vea como una "tarjeta"-->
+    <!--Mostramos la foto de perfil del usuario-->
+    <img [src]="usuario.foto == '' ? '/assets/img/camara.png' : usuario.foto" class="card-img-top">
+    <div class="card-body">
+        <form>
+            <!--Mostramos los datos del usuario que queremos mostrar-->
+            <div>
+                Nombre: {{usuario.nombre_usuario}}
+            </div>
+            <div>
+                Contraseña: {{usuario.contrasena}}
+            </div>
+            <div>
+                Fecha nacimiento: {{fecha_nacimiento}}
+            </div>
+            <div>
+                Puesto de trabajo: {{usuario.puesto_trabajo}}
+            </div>
+            <div>
+                Empresa: {{usuario.empresa}}
+            </div>
+            <div>
+                Tipo: {{usuario.tipo}}
+            </div>
+        </form>
+    </div>
+</div>
+
+

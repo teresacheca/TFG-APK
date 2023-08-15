@@ -1,0 +1,56 @@
+/*Le damos formato al cuerpo del html*/
+body {
+    font-family: Arial, sans-serif;
+}
+
+/*Le damos formato al título*/
+h2 {
+    text-align: center;
+    transform: translate(0%, 100px);
+}
+
+/*Le damos formato al formulario*/
+form {
+    width: 350px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transform: translate(0%, 50%);
+}
+
+/*Le damos formato a las casillas del formulario*/
+input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+/*Le damos formato a los botones*/
+button {
+    background-color: #e7e6e6;
+    color: black;
+    border:#999;
+    padding: 5px 20px 5px 20px;
+    cursor: pointer;
+    font-weight: normal;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+    font-size: 12px;
+    width: fit-content;
+    align-self: center;
+}
+
+/*Usamos hover para cambiar el color de los botones cuando el cursor se pone encima de estos*/
+button:hover {
+    background-color: #999;
+}
+
+/*le damos formato al botón "Nueva Solicitud"*/
+#solicitud {
+    color: rgb(255, 162, 0);
+    margin-left: 50px;
+}

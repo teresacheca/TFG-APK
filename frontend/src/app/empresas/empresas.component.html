@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Lista de empresas</title>
+</head>
+<body>
+  <button class="back-button" (click)="volver()"><i class="fas fa-chevron-circle-left"></i> Volver</button> <!--Le añadimos un icono de flecha al botón "volver"-->
+    <h2>Lista de empresas</h2>
+    <div class="centered-container">
+      <div *ngFor="let empresa of empresas"> <!--Recorremos el vector de empresas y las mostramos una por una-->
+        <!--Mostramos lel logo de cada empresa-->
+        <img [src]="empresa.logo === '' ? '/assets/img/upload.png' : empresa.logo" class="card-img-top">
+        <!--Mostramos el nombre de la empresa-->
+        <h3>{{empresa.nombre_empresa}}</h3>
+        <!--Añadimos un botón que nos permitirá movernos a una página donde veremos el perfil de la empresa-->
+        <button (click)="verEmpresa(empresa.id_empresa)">
+          <i class="fas fa-eye"></i> Ver
+      </button>
+      </div>
+  </div>
+</body>
+</html>

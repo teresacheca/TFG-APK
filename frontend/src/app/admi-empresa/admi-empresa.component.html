@@ -1,0 +1,28 @@
+
+<div class="card"> <!--Hacemos que la vista se vea como una "tarjeta"-->
+
+    <!--Mostramos la imagen de perfil del administrador de la empresa-->
+    <img [src]="admi_empresa.foto == '' ? '/assets/img/camara.png' : admi_empresa.foto" class="card-img-top">
+    <div class="card-body">
+        <form>
+            <div class="form-group">
+                <!--Mostramos el nombre del usuario-->
+                <p><strong>Nombre:</strong> {{ admi_empresa.nombre_usuario }} </p>
+            </div>  
+            <!--Creamos los botones que nos permiten hacer la acciones necesarias y que nos llevarán a las distintas rutas-->
+            <button (click)="verUsuarios()">
+                Usuarios de la empresa
+            </button>
+            <button (click)="verListaRecurosAe()">
+                Recursos/servicios
+            </button>
+            <button (click)="verReservasAe()">
+                Reservas
+            </button>
+            <button (click)="editarPerfil()">
+                Editar perfil
+            </button>
+        </form>
+    </div>
+</div>
+ 

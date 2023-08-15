@@ -1,0 +1,78 @@
+/*Le damos formato al contenedor donde se encuentran todos los elementos*/
+.centered-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  height: 100vh;
+  background-color: #ffffff;
+}
+
+/*Le damos formato a las fotos de perfil de todos los usuarios*/
+.card-img-top {
+  display: block;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%; /* Agregamos el borde redondeado para crear un círculo */
+  object-fit: cover;
+}
+
+/*Le damos formato al título*/
+h2 {
+  text-align: center;
+}
+  
+/*Le damos formato a los elementos que tenemos dentro del contenedor*/
+.col-md-2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+
+/*le damos formato a todos los botones*/
+button {
+  background-color: #ccc;
+  color: black;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  font-weight: normal;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+  font-size: 12px;
+  width: fit-content;
+  margin: auto;
+}
+
+/*Usamos hover para cambiar el color de los botones cuando el cursor se pone encima de estos*/
+button:hover {
+  background-color: #999;
+}
+
+/*le damos formato al botón "volver"*/
+.back-button {
+  background-color: #ccc; /*Color de fondo*/
+  color: black; /*Color de las letras*/
+  border: none; /*Eliminamos el borde*/
+  padding: 5px 5px 5px 5px;/*Agregamos espacio arededor del contenido del botón para que se vea mejor*/
+  cursor: pointer; /*Cambiamos el ratón a puntero cuando este pasa por encima*/
+  font-weight: normal; /*Establecemos el grosor de las letras del texto*/
+  font-size: small; /*Establecemos el tamaño de la letra*/
+  border-radius: 4px; 
+  transition: background-color 0.3s ease; /*Agragamos una transición leve para el cambio del color de fondo*/
+  width: 80px;  /*Ancho del botón*/
+
+  /*Movemos su posición para situarlo a la derecha del borde superior de la pantalla*/
+  position: absolute; /* Añade posición absoluta al botón */
+  top: 120px; /* Distancia desde la parte superior */
+  right: 10px; /* Distancia desde la derecha */
+}
+
+/*Usamos hover para cambiar el color de los botones cuando el cursor se pone encima de estos*/
+.back-button:hover {
+  background-color: #999;
+}
+

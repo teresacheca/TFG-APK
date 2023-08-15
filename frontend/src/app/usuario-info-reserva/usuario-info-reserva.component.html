@@ -1,0 +1,57 @@
+
+<!--Comprobamos si la reserva pertenece al usuario que la está viendo-->
+<p *ngIf="mia then esMia else otras">
+</p>
+
+<!--Si pertenece al usuario que la está consultando, mostraremos los datos de la reserva y añadiremos un botón para que pueda editar la reserva-->
+<ng-template #esMia>
+    <div class="card">
+        <div class="card-body">
+            <form>
+                <!--Mostramos los datos de la reserva que queremos mostrar-->
+                <div>
+                    Recurso o servicio reservado: {{reserva.nombre_rs}}
+                </div>
+                <div>
+                    Usuarios: {{reserva.nombre_usuario}}
+                </div>
+                <div>
+                    Fecha: {{fecha}}
+                </div>
+                <div>
+                    Hora: {{reserva.hora}}
+                </div>
+            </form>
+            <!--Añadimos un botón que nos llevará a la página que nos permite editar los datos de la reserva-->
+            <button (click)="editarReserva()"><i class="fas fa-pencil-alt"></i>
+                Editar
+            </button>
+        </div>
+    </div>
+    <button class="back-button" (click)="volver(0)"><i class="fas fa-chevron-circle-left"></i> Volver</button>  <!--Le añadimos un icono de flecha al botón "volver"-->
+</ng-template>
+
+
+<!--Si no pertenece al usuario que la está consultando, sólo mostraremos los datos de la reserva-->
+<ng-template #otras>
+        <div class="card">
+            <div class="card-body">
+                <form>
+                    <!--Mostramos los datos de la reserva que queremos mostrar-->
+                    <div>
+                        Recurso o servicio reservado: {{reserva.nombre_rs}}
+                    </div>
+                    <div>
+                        Usuarios: {{reserva.nombre_usuario}}
+                    </div>
+                    <div>
+                        Fecha: {{fecha}}
+                    </div>
+                    <div>
+                        Hora: {{reserva.hora}}
+                    </div>
+                </form>
+            </div>
+        </div>
+    <button class="back-button" (click)="volver(1)"><i class="fas fa-chevron-circle-left"></i> Volver</button> <!--Le añadimos un icono de flecha al botón "volver"-->
+</ng-template>

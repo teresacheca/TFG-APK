@@ -1,0 +1,25 @@
+
+
+<div class="card"> <!--Hacemos que la vista se vea como una "tarjeta"-->
+    <!--Mostramos la imagen de perfil del usuario-->
+    <img [src]="usuario.foto == '' ? '/assets/img/camara.png' : usuario.foto" class="card-img-top">
+    <div class="card-body">
+        <form>
+            <div class="form-group">
+                <!--Mostramos el nombre del usuario-->
+                <p><strong>Nombre:</strong> {{ usuario.nombre_usuario }} </p>
+                
+            </div>  
+            <!--Creamos los botones que nos permiten hacer la acciones necesarias y que nos llevarán a las distintas rutas-->
+            <button (click)="editarPerfil()">
+                Editar perfil
+            </button>
+            <button (click)="usuarioVeReservas()">
+                Reservas realizadas
+            </button>
+            <button (click)="usuarioRealizaReserva()">
+                Realizar reserva
+            </button>
+        </form>
+    </div>
+</div>

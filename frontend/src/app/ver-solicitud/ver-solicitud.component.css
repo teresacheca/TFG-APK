@@ -1,0 +1,132 @@
+/*Le damos formato al título*/
+h2{
+  text-align: center;
+}
+
+/*Le damos formato a la "tarjeta"*/
+.card {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  width: 350px;
+  padding: 20px;
+  position: absolute;
+  top: 65%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/*Le damos formato al logo de la empresa*/
+.card img {
+  display: block;
+  margin: 0 auto;
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+  margin-bottom: 10px;
+}
+
+/*Le damos formato a los elementos que se encuentran dentro de la "tarjeta"*/
+.card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/*Le damos formato a los botones que stán dentro de la "tarjeta"*/
+.card-buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/*Le damos formato a todos los botones*/
+button {
+  background-color: #ccc;
+  color: black;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  font-weight: normal;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+  font-size: 12px;
+  width: fit-content;
+  margin: 10px;
+}
+
+/*Usamos hover para cambiar el color de los botones cuando el cursor se pone encima de estos*/
+button:hover {
+  background-color: #999;
+}
+
+/*Le damos formato al botón "volver"*/
+.back-button {
+  background-color: #ccc; 
+  color: black; /*Color del texto del botón*/
+  border: none; /*Eliminamos el borde del botón*/
+  padding: 5px; /*Agregamos espacio arededor del contenido del botón para que se vea mejor*/
+  cursor: pointer; /*Cambiamos el ratón a puntero cuando este pasa por encima*/
+  font-weight: normal; /*Establecemos el grosor de las letras del texto*/
+  border-radius: 4px; 
+  transition: background-color 0.3s ease; /*Agragamos una transición leve para el cambio del color de fondo*/
+  font-size: 12px; /*Tamaño de la letra*/
+  width: fit-content; /*Ancho del botón*/
+  margin-bottom: 10px;
+
+  /*Posición en la esquina derecha del borde superior de la pantalla*/
+  position: absolute;
+  top: 120px;
+  right: 20px;
+}
+
+/*Usamos hover para cambiar el color de los botones cuando el cursor se pone encima de estos*/
+.back-button:hover {
+  background-color: #999;
+}
+
+
+/*Le damos formato al botón "rechazar"*/
+.rejectButton {
+  background-color:  #ccc; 
+  color: rgb(0, 0, 0);
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  font-weight: normal;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+  font-size: 12px;
+  width: fit-content;
+  align-self:flex-end;
+  margin-top: 10px;
+  
+}
+
+/*Usamos hover para cambiar el color de los botones cuando el cursor se pone encima de estos*/
+.rejectButton:hover {
+  background-color: #ccc; /* Cambia el color del hover si lo deseas */
+}
+
+/*Le damos formato al botón "aceptar"*/
+.acceptButton {
+  background-color: #ccc; /* Cambia el color si lo deseas */
+  color: rgb(0, 0, 0);
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  font-weight: normal;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+  font-size: 12px;
+  width: fit-content;
+  margin-top: 10px;
+  align-self: flex-start;
+
+}
+
+/*Usamos hover para cambiar el color de los botones cuando el cursor se pone encima de estos*/
+.acceptButton:hover {
+  background-color:  #ccc;
+}
+

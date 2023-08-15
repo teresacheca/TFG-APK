@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<body>
+<button class="back-button" (click)="volver()"><i class="fas fa-chevron-circle-left"></i> Volver</button> <!--Le añadimos un icono de flecha al botón "volver"-->
+  <div class="container"> <!--Lo metemos todo dentro de un contenedor para poder manipularlo-->
+    
+    <div class="card"> <!--Hacemos que la vista se vea como una "tarjeta"-->
+      <form>
+        <h2>Nuevo administrador</h2>
+         <!--Mostramos las etiquetas de la información que va en cada hueco y las casillas para que se rellene con la información del nuevo administrador-->
+        <label for="nombre_usuario">Nombre usuario:</label>
+        <input type="text" id="nombre_usuario" name="nombre_usuario" #nombre_usuario required><br>
+        <div>
+          <label for="nombre_usuario">Contraseña:</label>
+          <!--Llamamos a la función verContrasena cada vez que pulsamos el botón, que cambia el valor de mostrarContrasena
+              si mostrarContrasena vale True, veremos la contraseña como un texto, si no veremos puntos-->
+          <input [type]="mostrarContrasena ? 'text' : 'password'" name="contrasena" [(ngModel)]="usuario.contrasena" id="passwordInput">
+          <button (click)="verContrasena()">
+              <i [class]="mostrarContrasena ? 'fas fa-eye-slash' : 'fas fa-eye'"></i>
+          </button>
+        </div>
+        <label for="fecha_nacimiento">Fecha de nacimiento:</label>
+        <input type="date" id="fecha_nacimiento" name="fecha_nacimiento" #fecha_nacimiento required><br>
+        <label for="puesto_trabajo">Puesto de trabajo:</label>
+        <input type="text" id="puesto_trabajo" name="puesto_trabajo" #puesto_trabajo required><br>
+
+        <label for="foto">Foto:</label>
+        <img [src]="usuario.foto === '' ? '/assets/img/camara.png' : usuario.foto" class="card-img-top">
+        <input type="text" name="foto" [(ngModel)]="usuario.foto">
+
+        <!--Mostramos el nombre de la empresa y el tipo del usuario que no es variable-->
+        <div>
+          <label for="foto">Empresa: </label>{{usuario.empresa}}
+        </div>
+        <div>
+          <label for="foto">Tipo: </label>1
+        </div>
+        <button (click)="AganiadeAdmi(nombre_usuario.value, fecha_nacimiento.value, puesto_trabajo.value)">
+            Añadir administrador
+        </button>
+      </form>
+    </div>
+  </div>
+</body>
+</html>
+

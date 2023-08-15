@@ -1,0 +1,31 @@
+<button class="back-button" (click)="volver()"><i class="fas fa-chevron-circle-left"></i> Volver</button>
+<div class="card"> <!--Hacemos que la vista se vea como una "tarjeta"-->
+    
+    <div class="card-body">
+        <form>
+            <div>
+                <img [src]="empresa.logo === '' ? '/assets/img/upload.png' : empresa.logo" class="card-img-top">
+            </div>
+            <div>
+               <h2>{{empresa.nombre_empresa}}</h2> 
+            </div>
+            <div>
+                <button (click)="getAdministradoresEmpresa()">
+                    Administradores
+                </button>
+            </div>
+            <div>
+                <button (click)="editarPerfil()">
+                    Editar perfil
+                </button>
+            </div>
+            <div>
+                <button (click)="getUsuariosEmpresa()">
+                    Usuarios
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+  
+ 

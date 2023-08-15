@@ -1,0 +1,115 @@
+/*Le damos formato al contenedor donde se encuentra todo contenido*/
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #ffffff;
+}
+
+/*le damos formato a la "tarjeta"*/
+.card {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  width: 400px;
+  padding: 20px;
+  position: relative;
+}
+
+/*Le damos formato al título*/
+h2 {
+  text-align: center;
+}
+
+/*Le damos formato a la foto del recurso*/
+.card img.card-img-top {
+  display: block;
+  margin: 0 auto;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+/*Le damos formato al contenido de la "tarjeta"*/
+.card form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/*Le damos formato a las etiquetas (texto)*/
+.card form label {
+  font-weight: bold;
+}
+
+/*Le damos formato a los recuadros donde añadiremos la información del nuevo usuario*/
+.card form input {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin: 5px 0;
+}
+
+/*Le damos formato al texto que escribe el usuario en los huecos*/
+.card form input[type="text"] {
+  width: 100%;
+}
+
+/*Le damos formato al texto que escribe el usuario en el hueco de 
+la contraseña para que se vea como queremos*/
+.card form input[type="password"] {
+  width: 80%;
+}
+
+/*Le damos formato a los botones que hay dentro de la "tarjeta"*/
+.card form button {
+  background-color: #ccc; 
+  color: black; /*Color del texto del botón*/
+  border: none; /*Eliminamos el borde del botón*/
+  padding: 5px 10px; /*Agregamos espacio arededor del contenido del botón para que se vea mejor*/
+  cursor: pointer; /*Cambiamos el ratón a puntero cuando este pasa por encima*/
+  font-weight: normal; /*Establecemos el grosor de las letras del texto*/
+  border-radius: 4px; 
+  transition: background-color 0.3s ease; /*Agragamos una transición leve para el cambio del color de fondo*/
+  font-size: 12px; /*Declaramos el tamaño de la letra*/
+  width: fit-content; /*Ancho de los botones*/
+  margin: 10px auto; /*Márgenes de los botones hacia el resto de cosas*/
+}
+
+/*Usamos hover para cambiar el color de los botones cuando el cursor se pone encima de estos*/
+.card form button:hover {
+  background-color: #999;
+}
+
+
+/*le damos formato al botón "volver"*/
+.back-button {
+  background-color: #ccc; /*Color de fondo*/
+  color: black; /*Color de las letras*/
+  border: none; /*Eliminamos el borde*/
+  padding: 5px;/*Agregamos espacio arededor del contenido del botón para que se vea mejor*/
+  cursor: pointer; /*Cambiamos el ratón a puntero cuando este pasa por encima*/
+  font-weight: normal; /*Establecemos el grosor de las letras del texto*/
+  font-size: small; /*Establecemos el tamaño de la letra*/
+  border-radius: 4px; 
+  transition: background-color 0.3s ease; /*Agragamos una transición leve para el cambio del color de fondo*/
+  width: 80px;  /*Ancho del botón*/
+
+  /*Movemos su posición para situarlo a la derecha del borde superior de la pantalla*/
+  position: absolute;
+  top: 120px;
+  right: 20px;
+}
+
+/*Usamos hover para cambiar el color de los botones cuando el cursor se pone encima de estos*/
+.back-button:hover {
+  background-color: #999;
+}
+
+/*Le damos formato a la contraseña que vemos como puntos*/
+#passwordInput{
+  margin: auto;
+}

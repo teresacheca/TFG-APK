@@ -1,0 +1,26 @@
+<p *ngIf="vacio else lista">
+    <!--Si no hay usuarios, mostraremos un mesaje indicándolo-->
+    No hay usuarios en esta empresa
+    <!--Le añadimos un icono de flecha al botón "volver"-->
+    <button class="back-button" (click)="volver()"><i class="fas fa-chevron-circle-left"></i> Volver</button>
+</p>
+
+<!--En cambio, si hay usuarios, los mostramos-->
+<ng-template #lista>
+    <div class="centered-container">
+        <button class="back-button" (click)="volver()"><i class="fas fa-chevron-circle-left"></i> Volver</button> <!--Le añadimos un icono de flecha al botón "volver"-->
+        <h2>Usuarios</h2>
+        <div class="col-md-2" *ngFor="let usuario of usuarios"><!--Recorremos el vector de usuarios y mostramos uno por uno-->
+            <!--Mostramos la imagen de perfil de todos los usuarios-->
+            <img [src]="usuario.foto == '' ? '/assets/img/camara.png' : usuario.foto" class="card-img-top">
+            <div>
+                 <!--Mostramos el nombre del usuario-->
+                {{usuario.nombre_usuario}}
+            </div>
+            <!--Añadimos un botón que nos permitirá movernos a una página donde podremos ver la información del usuario-->
+            <button (click)="verUsuario(usuario.id)">
+                <i class="fas fa-eye"></i> Ver
+            </button>
+        </div>
+    </div>
+</ng-template>

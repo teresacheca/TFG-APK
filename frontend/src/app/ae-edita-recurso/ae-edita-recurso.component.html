@@ -1,0 +1,44 @@
+<!--Le añadimos un icono de flecha al botón "volver"-->
+<button class="back-button" (click)="volver()"><i class="fas fa-chevron-circle-left"></i> Volver</button>
+<h2>Editar el recurso o servicio</h2>
+<div class="card"> <!--Hacemos que la vista se vea como una "tarjeta"-->
+    <div class="card-body">
+        <form>
+            <div>
+                <!--Mostramos la imagen del recurso-->
+                <img [src]="recurso.foto === '' ? '/assets/img/camara.png' : recurso.foto" class="card-img-top">
+            </div>
+            <!--Mostramos las etiquetas de la información que va en cada hueco y las casillas con los valores actuales que se pueden modificar con la nueva información del recurso-->
+            <div>
+                Nombre:
+                <input type="text" name="nombre_rs" [(ngModel)]="recurso.nombre_rs">
+            </div>
+            <div>
+                Descripcion:
+                <input type="text" name="descripcion" [(ngModel)]="recurso.descripcion">
+            </div>
+            <div>
+                Foto:
+                <input type="text" name="foto" [(ngModel)]="recurso.foto">
+            </div>
+            <div>
+                Datos:
+                <input type="text" name="datos" [(ngModel)]="recurso.datos">
+            </div>
+            <div>
+                Aforo:
+                <input type="text" name="aforo" [(ngModel)]="recurso.aforo">
+            </div>
+            <!--Le ponemos clases a los botones para poder modificarlos mejor-->
+            <div class="card-buttons">
+                <button class="deleteButton" (click)="eliminarRescursoAe(recurso.id_recursoservicio)">
+                    <i class="fas fa-trash"></i> Eliminar recurso
+                </button>
+                <button class="saveButton" (click)="guardarCambiosRecursoAe(recurso.id_recursoservicio, recurso)" style="float: right;">
+                    <i class="fas fa-save"></i> Guardar cambios
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+

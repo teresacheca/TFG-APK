@@ -1,0 +1,22 @@
+
+  <div class="card"><!--Hacemos que la vista se vea como una "tarjeta"-->
+    <!--Mostramos la imagen de perfil del administrador general-->
+    <img [src]="admi_general.foto == '' ? '/assets/img/camara.png' : admi_general.foto" class="card-img-top">
+      <div class="card-body">
+          <form>
+              <div class="form-group">
+                  <!--Mostramos el nombre del usuario-->
+                  <p><strong>Nombre:</strong> {{ admi_general.nombre_usuario }} </p> 
+              </div>  
+          </form>
+          <!--Creamos los botones que nos permiten hacer la acciones necesarias y que nos llevarán a las distintas rutas-->
+          <div>
+            <button type="submit" (click)="mostrarEmpresas()">Empresas</button>
+          </div>
+          <div>
+            <button type="submit" (click)="mostrarSolicitudes()">Solicitudes</button>
+          </div>
+      </div>
+  </div>
+
+

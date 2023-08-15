@@ -1,0 +1,58 @@
+<!--Le añadimos un icono de flecha al botón "volver"-->
+<button class="back-button" (click)="volver()"><i class="fas fa-chevron-circle-left"></i> Volver</button>
+<h2>Editar perfil</h2>
+<div class="card"> <!--Hacemos que la vista se vea como una "tarjeta"-->
+    <div class="card-body">
+        <form>
+            <div>
+                <!--Mostramos la imagen de perfil del administrador de la empresa-->
+                <img [src]="admi_empresa.foto === '' ? '/assets/img/camara.png' : admi_empresa.foto" class="card-img-top">
+            </div>
+             <!--Mostramos las etiquetas de la información que va en cada hueco y las casillas con los valores actuales que se pueden modificar con la nueva información del administrador de la empresa-->
+            <div>
+                Nombre:
+                <input type="text" name="nombre_usuario" [(ngModel)]="admi_empresa.nombre_usuario">
+            </div>
+            <div>
+                Contraseña:
+                <!--Llamamos a la función verContrasena cada vez que pulsamos el botón, que cambia el valor de mostrarContrasena
+              si mostrarContrasena vale True, veremos la contraseña como un texto, si no veremos puntos-->
+                <input [type]="mostrarContrasena ? 'text' : 'password'" name="contrasena" [(ngModel)]="admi_empresa.contrasena" id="passwordInput">
+                <button (click)="verContrasena()">
+                    <i [class]="mostrarContrasena ? 'fas fa-eye-slash' : 'fas fa-eye'"></i>
+                </button>
+            </div>
+            <div>
+                Foto:
+                <input type="text" name="foto" [(ngModel)]="admi_empresa.foto">
+            </div>
+            <div>
+                Fecha nacimiento:
+                <input type="text" name="fecha_nacimiento" [(ngModel)]="fecha_nacimiento">
+            </div>
+            <div>
+                Puesto de trabajo:
+                <input type="text" name="puesto_trabajo" [(ngModel)]="admi_empresa.puesto_trabajo">
+            </div>
+            <div>
+                Empresa:
+                <input type="text" name="empresa" [(ngModel)]="admi_empresa.empresa">
+            </div>
+            <div>
+                Tipo:
+                <input type="text" name="tipo" [(ngModel)]="admi_empresa.tipo">
+            </div>
+            <!--Le ponemos clases a los botones para poder modificarlos mejor-->
+            <div class="card-buttons">
+                <button class="deleteButton" (click)="eliminarCuentaAdmiEmpresaAe(admi_empresa.nombre_usuario)">
+                    <i class="fas fa-trash"></i> Eliminar cuenta
+                </button>
+                <button class="saveButton" (click)="guardarCambiosAdmiEmpresaAe(admi_empresa.nombre_usuario, admi_empresa, fecha_nacimiento)" style="float: right;">
+                    <i class="fas fa-save"></i> Guardar cambios
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+
+

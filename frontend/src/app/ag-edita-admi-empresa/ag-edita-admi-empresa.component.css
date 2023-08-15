@@ -1,0 +1,141 @@
+/*Le damos formato a la "tarjeta"*/
+.card {
+  background-color: white; /*Color de fondo*/
+  border-radius: 10px; /*Creamos un racio en los border para crear esquinas redondeadas*/
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /*Ponemos una sombra alrededor de l "tarjeta"*/
+  width: 400px; 
+  padding: 20px;
+
+  /*para posicionarlo en el centro de la pantalla aunque se cambie esta de tamaño*/
+  position: absolute;
+  top: 90%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/*Le damos formato al título*/
+h2 {
+  text-align: center;
+}
+
+/*Le damos formato a la foto de perfil del administrador*/
+.card img {
+  display: block;
+  margin: 0 auto;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+/*Le damos formato a los elementos*/
+.card form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/*Le damos formato a los elementos que se encuentran dentro de la "tarjeta"*/
+.card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/*Le damos formato a los recuadros donde modificaremos la información del usuario*/
+.card-body input {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin: 5px 0; 
+}
+
+/*Le damos formato al resto de botones*/
+button {
+  background-color: #ccc;
+  color: black;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  font-weight: normal;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+  font-size: 12px;
+  width: fit-content;
+  margin: 10px;
+}
+
+/*Usamos hover para cambiar el color de los botones cuando el cursor se pone encima de estos*/
+button:hover {
+  background-color: #999;
+}
+
+/*le damos formato al botón "volver"*/
+.back-button {
+  background-color: #ccc; /*Color de fondo*/
+  color: black; /*Color de las letras*/
+  border: none; /*Eliminamos el borde*/
+  padding: 5px 5px 5px 5px;/*Agregamos espacio arededor del contenido del botón para que se vea mejor*/
+  cursor: pointer; /*Cambiamos el ratón a puntero cuando este pasa por encima*/
+  font-weight: normal; /*Establecemos el grosor de las letras del texto*/
+  font-size: small; /*Establecemos el tamaño de la letra*/
+  border-radius: 4px; 
+  transition: background-color 0.3s ease; /*Agragamos una transición leve para el cambio del color de fondo*/
+  width: 80px;  /*Ancho del botón*/
+
+  /*Movemos su posición para situarlo a la derecha del borde superior de la pantalla*/
+  position: absolute; /* Añade posición absoluta al botón */
+  top: 120px; /* Distancia desde la parte superior */
+  right: 10px; /* Distancia desde la derecha */
+}
+
+/*Usamos hover para cambiar el color de los botones cuando el cursor se pone encima de estos*/
+.back-button:hover {
+  background-color: #999;
+}
+
+
+/*Le damos formato al botón "Eliminar cuenta"*/
+.deleteButton {
+  background-color: #cc0000;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  font-weight: normal;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+  font-size: 12px;
+  width: fit-content;
+  margin: auto;
+  align-self: flex-start;
+  margin-top: 10px
+}
+
+/*Usamos hover para cambiar el color de los botones cuando el cursor se pone encima de estos*/
+.deleteButton:hover {
+  background-color: #990000;
+}
+
+/*Le damos formato al botón "guardar cambios"*/
+.saveButton {
+  background-color:  #ccc; 
+  color: rgb(0, 0, 0);
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  font-weight: normal;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+  font-size: 12px;
+  width: fit-content;
+  margin: auto;
+  align-self: flex-end;
+  margin-top: 10px
+}
+
+/*Usamos hover para cambiar el color de los botones cuando el cursor se pone encima de estos*/
+.saveButton:hover {
+  background-color:  #ccc;
+}

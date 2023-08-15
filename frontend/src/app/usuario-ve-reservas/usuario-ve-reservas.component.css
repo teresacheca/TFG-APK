@@ -1,0 +1,105 @@
+/*Le damos formato al calendario*/
+.calendar {
+  max-width: 800px;
+  margin: 20px auto;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  padding: 20px;
+}
+
+/*Le damos formato a la cabecera del calendario*/
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+/*Le damos formato al cuerpo del calendario*/
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-gap: 5px;
+}
+
+/*Le damos formato a los días de la semana*/
+.calendar-day {
+  text-align: center;
+  background-color: #f2f2f2;
+  padding: 10px;
+  border-radius: 4px;
+}
+
+/*Le damos formato a los días del mes*/
+.calendar-date {
+  text-align: center;
+  padding: 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/*Ocultamos el formato de los días que estén vacíos*/
+.empty {
+  visibility: hidden;
+}
+
+/*Le damos formato a todos los botones*/
+button {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  background-color: #ffffff;
+  color: black;
+  border-radius: 4px;
+}
+
+/*Le damos formato al botón "ver" de cada reserva*/
+#verReserva{
+  background: none;
+  border: none;
+  font-size: 12px;
+  cursor: pointer;
+  background-color: #eceaea;
+  color: black;
+  border-radius: 4px;
+}
+
+/*le damos formato al botón "volver"*/
+.back-button {
+  background-color: #ccc; /*Color de fondo*/
+  color: black; /*Color de las letras*/
+  border: none; /*Eliminamos el borde*/
+  padding: 5px; /*Agregamos espacio arededor del contenido del botón para que se vea mejor*/
+  cursor: pointer; /*Cambiamos el ratón a puntero cuando este pasa por encima*/
+  font-weight: normal; /*Establecemos el grosor de las letras del texto*/
+  font-size: small; /*Establecemos el tamaño de la letra*/
+  border-radius: 4px; 
+  transition: background-color 0.3s ease; /*Agragamos una transición leve para el cambio del color de fondo*/
+  width: 80px;  /*Ancho del botón*/
+  height: 30px;
+
+  /*Movemos su posición para situarlo a la derecha del borde superior de la pantalla*/
+  position: absolute; /* Añade posición absoluta al botón */
+  top: 120px; /* Distancia desde la parte superior */
+  right: 20px; /* Distancia desde la derecha */
+  font-size: 14px;
+}
+
+/*Usamos hover para cambiar el color de los botones cuando el cursor se pone encima de estos*/
+.back-button:hover {
+  background-color: #999;
+}
+
+/*Le damos formato a los botones "mis reservas" y "todas las reservas"*/
+#elegir{
+  background: none;
+  border: none;
+  font-size: 10px;
+  cursor: pointer;
+  background-color: #f2f2f2;
+  color: black;
+  border-radius: 4px;
+  margin: 10px 10px 10px 10px ;
+}

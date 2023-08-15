@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <h2>Nueva Solicitud</h2>
+  <div class="container">
+    
+    <div class="card"> <!--Hacemos que la vista se vea como una "tarjeta"-->
+      <form>
+        <!--Mostramos las etiquetas de la información que va en cada hueco y las casillas con los valores actuales que se pueden modificar con la nueva información de la empresa-->
+        <label for="nombre_empresa">Nombre empresa:</label>
+        <input type="text" id="nombreEmpresa" name="nombreEmpresa" #nombreEmpresa required><br>
+        <label for="direccion">Dirección:</label>
+        <input type="direccion" id="direccion" name="direccion" #direccion required><br>
+        <label for="datos_de_contacto">Datos de contacto:</label>
+        <input type="datos_de_contacto" id="datos_de_contacto" name="datos_de_contacto" #datos_de_contacto required><br>
+        <label for="direccion">Logo:</label>
+        <!--Mostramos el logo conforme se modifica la imagen-->
+        <img id="logo" [src]="empresa.logo === '' ? '/assets/img/upload.png' : empresa.logo" class="card-img-top">
+
+        <input type="text" id="logoInput" name="foto" [(ngModel)]="empresa.logo">
+        <input id="submit" type="submit" value="Crear solicitud" (click)="crearSolicitud(nombreEmpresa.value, direccion.value, datos_de_contacto.value, empresa.logo)">
+      </form>
+      <!--Añadimos el botón cancelar que nos devuelve a la pantalla de login-->
+      <a id="cancelar" class="btn btn-danger btn-sm mt-3" href="/">Cancelar</a>
+    </div>
+
+  </div>
+</body>
+</html>
+
+

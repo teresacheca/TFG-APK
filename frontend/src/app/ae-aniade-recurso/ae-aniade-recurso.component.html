@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <!--Le añadimos un icono de flecha al botón "volver"-->
+  <button class="back-button" (click)="volver()"><i class="fas fa-chevron-circle-left"></i> Volver</button>
+  <h2>Nuevo recurso o servicio</h2>
+  <div class="container"> <!--Lo metemos todo dentro de un contenedor para poder manipularlo-->
+    
+    <div class="card"><!--Hacemos que la vista se vea como una "tarjeta"-->
+      <form>
+        <!--Mostramos las etiquetas de la información que va en cada hueco y las casillas para que se rellene con la información del nuevo recurso-->
+        <label for="nombre_rs">Nombre del recurso o servicio:</label>
+        <input type="text" id="nombre_rs" name="nombre_rs" #nombre_rs required><br>
+        <label for="descripcion">Descripcion:</label>
+        <input type="descripcion" id="descripcion" name="descripcion" #descripcion required><br>
+        
+        <label for="foto">Foto:</label>
+        <!--Mostramos la foto "camara.png" mientras el nuevo recurso no tenga una foto asignada-->
+        <img [src]="recurso.foto === '' ? '/assets/img/camara.png' : recurso.foto" class="card-img-top">
+        <input type="text" name="foto" [(ngModel)]="recurso.foto">
+
+        <label for="datos">Datos:</label>
+        <input type="datos" id="datos" name="datos" #datos required><br>
+        <label for="aforo">Aforo o cantidad de personas que usaran el recurso o servicio:</label>
+        <input type="aforo" id="aforo" name="aforo" #aforo required><br>
+        <!--Mostramos el nombre de la empresa, ya que no queremos que se edite este dato-->
+        <div>
+          <label for="datos">Empresa:</label> {{nombre_empresa}}
+        </div>
+        <button (click)="AeaniadeRecurso(nombre_rs.value, descripcion.value, recurso.foto, datos.value, aforo.value)">
+            Añadir recurso o servicio
+        </button>
+        </form>
+  </div>
+  </div>
+</body>
+</html>
+
+

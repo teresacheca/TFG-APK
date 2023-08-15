@@ -1,0 +1,35 @@
+
+<button class="back-button" (click)="volver()"><i class="fas fa-chevron-circle-left"></i> Volver</button> <!--Le añadimos un icono de flecha al botón "volver"-->
+<h2>Editar empresa</h2>
+<div class="card"> <!--Hacemos que la vista se vea como una "tarjeta"-->
+    <div class="card-body">
+        <form>
+             <!--Mostramos las etiquetas de la información que va en cada hueco y las casillas con los valores actuales que se pueden modificar con la nueva información de la empresa-->
+            <div>
+                Nombre empresa:
+                <input type="text" name="nombre_empresa" [(ngModel)]="empresa.nombre_empresa">
+            </div>
+            <div>
+                Datos de contacto:
+                <input type="text" name="datos_de_contacto" [(ngModel)]="empresa.datos_de_contacto">
+            </div>
+            <div>
+                Descripcion:
+                <input type="text" name="descripcion" [(ngModel)]="empresa.descripcion">
+            </div>
+            <div>
+                Logo:
+                <img [src]="empresa.logo === '' ? '/assets/img/upload.png' : empresa.logo" class="card-img-top">
+                <input type="text" name="foto" [(ngModel)]="empresa.logo">
+            </div>
+            <button class="deleteButton" (click)="eliminarCuentaEmpresa(empresa.id_empresa)">
+                <i class="fas fa-trash"></i> Eliminar cuenta
+            </button>
+            <button class="saveButton" (click)="guardarCambios(empresa.id_empresa, empresa)" style="float: right;">
+                <i class="fas fa-save"></i> Guardar cambios
+            </button>
+        </form>
+    </div>
+</div>
+
+

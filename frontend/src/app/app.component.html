@@ -1,0 +1,8 @@
+<app-navegacion *ngIf="isHomeRoute(); else ElseBlock"></app-navegacion>
+<ng-template #ElseBlock>
+</ng-template>
+
+
+<div class="container p-4">
+  <router-outlet></router-outlet>
+</div>

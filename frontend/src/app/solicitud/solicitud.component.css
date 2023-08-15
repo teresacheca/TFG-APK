@@ -1,0 +1,71 @@
+/*Le damos formato al contenedor donde se encuentran todos los elementos*/
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #ffffff;
+}
+
+/*Le damos formato a la "tarjeta"*/
+.card {
+  background-color: white; /*Color de fondo*/
+  border-radius: 10px; /*Creamos un racio en los border para crear esquinas redondeadas*/
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /*Ponemos una sombra alrededor de l "tarjeta"*/
+  width: 400px;
+  padding: 20px;
+  position: relative;
+}
+
+/*Le damos formato al título*/
+h2 {
+  text-align: center;
+}
+
+/*Le damos formato al logo de la empresa*/
+.card img.card-img-top {
+  display: block;
+  margin: 0 auto;
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+  margin-bottom: 10px;
+}
+
+/*Le damos formato al formulario*/
+.card form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/*Le damos formato a las etiquetas de la información que hay que rellenar en el formulario*/
+.card form label {
+  font-weight: bold;
+}
+
+/*Le damos formato a las casillas que hay que rellenar*/
+.card form input {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/*Le damos formato al texto que se escribe dentro de las casillas*/
+.card form input[type="text"] {
+  width: 100%;
+}
+
+
+/*Le damos formato al botón de "crear solicitud"*/
+#submit {
+  background-color: #dad7d7;
+  color: black;
+}
+
+/*Le damos formato al botón de "cancelar"*/
+#cancelar{
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+  font-size: 12px;
+}

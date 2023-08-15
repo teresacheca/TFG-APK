@@ -1,0 +1,36 @@
+<h2>Lista de reservas</h2>
+<!--Le añadimos un icono de flecha al botón "volver"-->
+<button class="back-button" (click)="volver()"><i class="fas fa-chevron-circle-left"></i> Volver</button>
+<div class="calendar"> <!--Introdimos todo en la clase calendario-->
+    <div class="calendar-header"> <!--En la cabecera del calendario pondremos los siguientes elementos:-->
+        <button (click)="mesAnterior()">&lt;</button> <!--Flecha hacia la izquierda que nos llevará a la función mesAnterior-->
+        <h1>{{ currentMonth.format('MMMM YYYY') }}</h1> <!--El nombre del mes actual junto al año en el que estemos-->
+        <button (click)="siguienteMes()">&gt;</button> <!--Flecha hacia la derecha que nos llevará a la función siguienteMes-->
+    </div>
+    <div class="calendar-grid"> <!--En el cuerpo del calendario pondremos los días-->
+        <!--Primero mostraremos el nombre de los días de la semana-->
+        <div class="calendar-day" *ngFor="let dia of diasDeLaSemana">{{ dia }}</div>
+        <!--Luego nos moveremos por la matriz "semanas" y recorreremos cada semana mostrando día a día-->
+        <ng-container *ngFor="let semana of semanas">
+        <div class="calendar-date" *ngFor="let date of semana">   
+            <span *ngIf="date !== 0">
+                {{date}}      
+            </span> 
+            <!--Si el día que estamos pintando tiene una reserva, sacaremos la hora y el recurso de dicha reserva y la mostraremos-->
+            <div *ngIf="date !== 0 && tengoReserva(date)">
+                <!--Usaremos este formato para poder ver la hora y el recurso en distintas líneas de texto-->
+                <div  class="content" *ngFor="let hora of getHoras(date, currentMonth.format('YYYY-MM'))"> 
+                    <div [innerHTML]="hora"></div>
+                    <!--Añadiremos un botón de ver para cada reserva que nos llevará a la página que nos muestra la información de la reserva seleccionada-->
+                    <button id="verReserva" (click)="veReservaAe(date, hora, currentMonth.format('YYYY-MM'))">
+                        <i class="fas fa-eye"></i> Ver
+                    </button>
+                </div>
+            </div>
+        </div>
+        </ng-container>
+    </div>
+    </div>
+
+
+

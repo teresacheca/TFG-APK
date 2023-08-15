@@ -1,0 +1,27 @@
+
+
+<div class="card"> <!--Hacemos que la vista se vea como una "tarjeta"-->
+    <div class="card-body">
+        <!--Mostramos la imagen de perfil del administrador de la empresa-->
+        <img [src]="recurso.foto == '' ? '/assets/img/camara.png' : recurso.foto" class="card-img-top">
+        <form>
+            <!--Mostramos los datos del recurso que nos interesa mostrar-->
+            <div>
+                Nombre: {{recurso.nombre_rs}}
+            </div>
+            <div>
+                Descripcion: {{recurso.descripcion}}
+            </div>
+            <div>
+                Datos: {{recurso.datos}}
+            </div>
+            <div>
+                Aforo: {{recurso.aforo}}
+            </div>
+        </form>
+    </div>
+</div>
+<!--Le añadimos un icono de flecha al botón "volver"-->
+<button class="back-button" (click)="volver()"><i class="fas fa-chevron-circle-left"></i> Volver</button>
+
+
